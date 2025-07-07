@@ -5,8 +5,14 @@ const multer = require('')
 const uploadDestination = 'uploads'
 //Показываем, где хранить файлы
 const storage = multer.diskStorage({
-    destination:uploadDestination
+    destination:uploadDestination,
+    filename: function(req,file,cb){
+        cb(null,file.originalname,e)
+
+    }
 })
+const upload = multer({storage: storage})
+
 
 router.get('/register', (req,res) => {
 res.send('register')
