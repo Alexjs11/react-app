@@ -43,4 +43,8 @@ model Follows{
 
 mode Post {
     id String @id @default(auto()) @map("_id") @db.ObjectId
+    content String 
+    author User
+    авава
+    ава
 }
